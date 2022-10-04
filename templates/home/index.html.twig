@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acceuil{% endblock %}
+
+{% block body %}
+
+<nav>
+<div class="navbar">
+
+<ul>
+
+    <li><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="panier bi bi-bag text-white" viewBox="0 0 16 16">
+  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+</svg> </li>
+
+</ul>
+<div class="navbar-main"><img id="img-nav" src="/image/logo-MK.png" height="50"></div>
+
+
+</div>
+</nav>
+
+<br>
+
+<section>
+<div class="publication-container ">
+<div class="publication row-cols-md-1 ">
+
+<img class="img" src="/image/casquette-marron2.png" alt="image" ><br>
+<br>
+<button class="button-achat"><h3><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+</svg> ACHETER</h3> </button><br>
+<br>
+<h3>Casquette marron </h3>
+<h4>Prix:</h4>
+</div>
+
+<div class="publication row-cols-md-1 ">
+
+<img class="img" src="/image/casquette-noir2.png" alt="" ><br>
+<br>
+<button class="button-achat"><h3><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+</svg> ACHETER</h3> </button><br>
+<br>
+<h3>Casquette noir </h3>
+<h4>Prix:</h4>
+</div>
+
+
+</div>
+</section>
+<br>
+
+<footer>
+<div class="footer-container">
+<div class="footer-main"> 
+
+<div class="logo-reseau">
+<img src="/image/tiktok.png" alt="logo-tiktok" width="55">
+<img src="/image/instagram.png" alt="logo-instagram" width="55">
+
+</div>
+<br>
+<p class="text-white text-center">Copyright <span><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-c-circle" viewBox="0 0 16 16">
+  <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512Z"/>
+</svg></span> 2022 MK. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+
+{% endblock %}
