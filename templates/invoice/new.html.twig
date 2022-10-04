@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Facturation{% endblock %}
+
+
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+
+
+
+
+
+
+
+
+
+
+{% block body %}
+ <h1 class="text-center ">livraison</h1>
+ <br>
+ <h2 class="text-center">Résumer de votre panier</h2>
+
+<table class="table table-striped panier">
+  <thead>
+    <tr>
+      
+      <th scope="col">Nom</th>
+      
+      
+      <th scope="col">Quantité</th>
+      <th scope="col">Prix</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  {# {% for annonce in PanierProduct %} #}
+   
+    {# <tr>
+      <td>{{annonce.product.title}}   </td>
+  
+ 
+      <td> {{annonce.qty}}</td>
+      <td>{{annonce.product.price|price}}</td>
+    </tr>
+    
+  {% endfor %}
+  <tr>
+   <td colspan="2">Total: </td>
+   <td> {{total|price}}</td>
+    </tr> #}
+   </tbody>
+</table>
+
+<br>
+
+<h2 class="text-center">Adresse de livraison</h2>
+
+
+
+    {# <div class="p-3 mb-2 bg-secondary text-dark panier ">
+    {{ form_start(form) }}
+    <div class="column">
+    <div class="col">
+      {{ form_row(form.name) }}
+    </div>
+    <div class="col">
+    {{ form_row(form.firstname) }}
+    </div>
+    
+    <div class="col">
+    {{ form_row(form.adress) }}
+ </div>
+<div class="col">
+    {{ form_row(form.postCode) }}
+ </div>
+    <div class="col">
+    {{ form_row(form.town)}}
+ </div>
+    </div>
+    <div class="col">
+    {{form_row(form.country)}}
+    </div>  
+
+    <div class="col">
+    {{form_row(form.valider) }}
+    </div>  
+     
+  
+      
+    </div>   
+       
+          
+    {{ form_end(form) }} #}
+      
+     
+    {% endblock %}
