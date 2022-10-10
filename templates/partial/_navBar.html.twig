@@ -1,0 +1,150 @@
+
+<nav class="navbar  mb-3 text-center">
+  <div class="navbar-main container-fluid ">
+  <div class="main-nav">
+<a class="navbar-brand text-white" href="{{path("app_articles")}}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-shop" viewBox="0 0 16 16">
+  <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"/>
+</svg></a></a>
+
+<a class=" navbar-brand text-white" href="{{path("app_home")}}">
+      <img id="img-nav" src="/image/logo-MK.png"  alt="" width="130" height="124" class="d-inline-block align-text-top">
+  
+    </a>
+
+   {% if is_granted("ROLE_ADMIN")== true %}
+           <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" href="{{path('admin_annonces_ajout')}}">Ajouter un article</a>
+          </li>  
+          {% endif %}
+
+          {% if is_granted("ROLE_ADMIN")== true %}
+<li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="{{path("admin_categories_ajout")}}">Ajouter catégorie</a>
+          </li>
+{% endif %}
+   
+   {% if is_granted("ROLE_ADMIN")== true %}
+<a class="navbar-brand text-white" href="{{path("admin_annonces_home")}}">Gérer Annonces</a>
+{% endif %}
+    
+     
+     
+
+  
+ {% if is_granted("ROLE_ADMIN")== false %}
+     <div>
+     
+     
+ <a class="navbar-brand text-white" href="{{path("panier_voir")}}">
+{% set fullPanier = 0 %}
+          {% for product in app.session.get('panier') %}
+            {% set fullPanier = fullPanier + product %}
+          {% endfor %}
+          {{fullPanier}}
+   
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag text-white" viewBox="0 0 16 16">
+  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+</svg>
+
+</a>
+
+ </div>
+  {% endif %}
+ </div>
+ <br>
+
+    {# <button class="navbar-toggler  " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+    <div class="offcanvas offcanvas-end "  id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+      <img class="logoheader" src="/image/logo-MK-white.jpeg"  alt="" width="100" height="80">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel" >MK </h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+        
+        <br>
+
+                <li class="nav-item">
+<div>
+ <a class="navbar-brand" href="/">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+  <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+</svg>
+<h6>Acceuil</h6>
+</a>
+
+ </div>
+   </li>
+         
+          
+          <li class="nav-item">
+<div>
+ <a class="navbar-brand" href="{{path("app_articles")}}">
+ <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-easel" viewBox="0 0 16 16">
+  <path d="M8 0a.5.5 0 0 1 .473.337L9.046 2H14a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1.85l1.323 3.837a.5.5 0 1 1-.946.326L11.092 11H8.5v3a.5.5 0 0 1-1 0v-3H4.908l-1.435 4.163a.5.5 0 1 1-.946-.326L3.85 11H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h4.954L7.527.337A.5.5 0 0 1 8 0zM2 3v7h12V3H2z"/>
+</svg>
+<h6>Articles</h6>
+</a>
+
+ </div>
+   </li>
+
+  
+          <br> 
+{% if is_granted("ROLE_ADMIN")== true %}
+     <li class="nav-item">
+        
+ <div>
+ <a class="navbar-brand" href="{{path("admin_annonces_home")}}">
+ <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+  <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+</svg>
+<h6>Gérer Annonces</h6>
+</a>
+
+ </div>
+ {% endif %}
+ 
+
+      
+<br>
+        </li>
+
+          {% if is_granted("ROLE_USER")== true %}
+           <li class="nav-item">
+            <a class="nav-link btn btn-secondary bg-secondary p-2" style="--bs-bg-opacity: .3;" submit="btn btn-secondary" href="{{path("app_logout")}}">Déconnexion</a>
+            
+          </li>
+          {% endif %}
+          <br>
+          {% if is_granted("ROLE_USER")== false %}
+          <li class="nav-item">
+            <li class="nav-item">
+            <a class="nav-link btn btn-secondary bg-secondary p-2" style="--bs-bg-opacity: .3;"  href="{{path("app_login")}}">S'inscrire/Connexion</a>
+            
+          </li>
+          </li>
+          {% endif %}
+          
+          
+        </ul>
+      </div> #}
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+    {% for classStyle,messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{classStyle}}" role="alert">
+                <p class="mb-0">{{ message }}</p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>

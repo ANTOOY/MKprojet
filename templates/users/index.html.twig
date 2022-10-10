@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} profil {{app.user.name}} {{app.user.firstname}}{% endblock %}
+
+
+
+
+
+
+{% block body %}
+
+
+
+ <li class="nav-item">
+    <a class="barnav nav-link link-dark  " href="{{path("users_annonces_ajout")}}">Ajouter une Annonce</a>
+  </li>
+   </ul></h3>
+
+<br>
+{% for message in app.flashes('message') %}
+<div class="container alert alert-success" role="alert">
+Profil mis à jour
+</div>
+    
+{% endfor %}
+
+<div class="profil">
+<h1 class="text-center"  >Mon Profil</h1>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+</svg>
+
+  <div class=" mb-2 container border border-4 ">
+  <div class="row row-cols-2">
+  
+    <div class="col">Nom : </div>
+    <div class="col">{{app.user.name}}</div>
+    <div class="col">Prénom :</div>
+    <div class="col">{{app.user.firstname}}</div>
+    <div class="col">Email :</div>
+    <div class="col">{{app.user.email}}</div>
+   <br>
+   <br>
+     <div class="col-4">
+    <a class="btn btn-secondary bg-secondary p-2" style="--bs-bg-opacity: .3;" href="{{path('users_editprofile')}}" role="button">Modifier Profil</a>
+    <a class="btn btn-secondary bg-secondary p-2" style="--bs-bg-opacity: .3;" href="{{path('users_editpass')}}" role="button">Modifier mot de passe</a>
+    </div>
+  
+  </div>
+</div>
+</div>  

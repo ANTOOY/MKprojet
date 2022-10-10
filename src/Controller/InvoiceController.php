@@ -44,7 +44,7 @@ class InvoiceController extends AbstractController
                 "product" => $product,
                 "qty" => $qty,
             ];
-            $total += $product->getPrice();
+            $total += $product->getPrice() * $qty;
         }
 
 

@@ -3,29 +3,9 @@
 {% block title %}Panier{% endblock %}
 
 {% block body %}
-{# 
-<section>
-<div class="panier-container">
-<div class=""></div>
-</div>
-</section> #}
-
-<nav>
-<div class="navbar">
-
-<ul>
-
-    <li><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="panier bi bi-bag text-white" viewBox="0 0 16 16">
-  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
-</svg> </li>
-
-</ul>
-<div class="navbar-main"><img id="img-nav" src="/image/logo-MK.png" height="50"></div>
-
-
-</div>
-</nav>
 <br>
+<br>
+{# <h3 class="text-center">Panier</h3>
 
 
 <table class="table table-dark panier ">
@@ -43,50 +23,189 @@
     </tr>
   </thead>
   <tbody>
-  {# {% for annonce in PanierProduct %} #}
+  {% for annonce in PanierProduct %}
    
     <tr>
-      {# <td >  {{annonce.product.title}}  #}
-      {# <br><img src="{{asset('uploads/images/' ~ annonce.product.images)}} " width="100" height="150"> #}
+      <td >  {{annonce.product.title}} 
+      <br><img src="{{asset('uploads/images/' ~ annonce.product.images)}} " width="100" height="150">
       
       </td>
   
  
-      {# <td> <a href="{{path("panier_add", {'product': annonce.product.id}) }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-light" viewBox="0 0 16 16"> #}
+      <td> <a href="{{path("panier_add", {'product': annonce.product.id}) }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-light" viewBox="0 0 16 16">
   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
 </svg></a> 
-      {# {{annonce.qty}} #}
-{# <a href="{{path("panier_less", {'product': annonce.product.id}) }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-light" viewBox="0 0 16 16"> #}
+      {{annonce.qty}}
+<a href="{{path("panier_less", {'product': annonce.product.id}) }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-light" viewBox="0 0 16 16">
   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
 </svg></a>
-{# <a href="{{path('panier_supprimer', {'product': annonce.product.id}) }}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-danger " viewBox="0 0 16 16"> #}
-  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-</svg></a></td>
+<a href="{{path('panier_supprimer', {'product': annonce.product.id}) }}"><button>Retirer l'article </button> </a></td>
 
 
 
-      {# <td>{{annonce.product.price|price}}</td> #}
-{# <td>{{annonce.qty}}
+      <td>{{annonce.product.price|price}}</td>
+<td>{{annonce.qty}}
 
- </td>      #}
+ </td>     
       
       
     </tr>
-  {# {% endfor %} #}
+  {% endfor %}
    
    <tr>
    <td colspan="2">Total: </td>
-   {# <td> {{total|price}}</td> #}
+   <td> {{total|price}}</td>
     </tr>
   </tbody>
 </table>
 
-{# {% if PanierProduct != [] %} #}
+{% if PanierProduct != [] %}
 <div class=" text-center bd-highlight">
-{# <a href="{{path('invoice_new')}}" class="  btn btn-dark bg-dark p-2 " >Commander</a> #}
+<a href="{{path('invoice_new')}}" class="  btn btn-dark bg-dark p-2 " >Commander</a>
 </div>
 
+<br>
 
+{% endif %} #}
+
+
+{# <main class="container text-center">
+    <div class="basket container">
+      <div class="basket-module">
+        <label for="promo-code">Entrer un code promo</label>
+        <input id="promo-code" type="text" name="promo-code" maxlength="5" class="promo-code-field">
+        <button class="promo-code-cta btn btn-dark">Appliquer</button>
+      </div>
+      
+      <div class="basket-product">
+      {% for annonce in PanierProduct %}
+        <div class="item">
+          <div class="product-image">
+            <img src="{{asset('uploads/images/' ~ annonce.product.images)}} " class="product-frame"> 
+          </div>
+          <div class="product-details">
+            <h4>{{annonce.product.title}}</h4>
+            <h6>{{annonce.product.content}} </h6>
+          </div>
+        </div>
+        
+        <div class="quantity" class="quantity-field">
+<a href="{{path("panier_less", {'product': annonce.product.id}) }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-dark" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
+</svg></a>
+      {{annonce.qty}}
+       <a href="{{path("panier_add", {'product': annonce.product.id}) }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-dark" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+</svg></a> 
+        </div>
+        <div class="subtotal">{{annonce.product.price|price}}</div>
+        <div class="remove">
+          <a href="{{path('panier_supprimer', {'product': annonce.product.id}) }}"><button>Retirer l'article</button></a>
+        </div>
+        </div>
+
+      
+
+      
+      
+   
+    {% endfor %}
+    <aside>
+      <div class="summary">
+        <div class="summary-total-items"><span class="total-items"></span> Articles dans votre panier</div>
+        <div class="summary-subtotal">
+          <div class="subtotal-title">Sous-total</div>
+          <div class="subtotal-value final-value" id="basket-subtotal">{{total|price}}</div>
+         <div class="summary-promo hide">
+            <div class="promo-title">Promotion</div>
+            <div class="promo-value final-value" id="basket-promo"></div>
+          </div>
+          </div>
+          
+        
+        
+        
+      
+       
+        <div class="summary-total">
+          <div class="total-title">Total</div>
+          <div class="total-value final-value" id="basket-total">{{total|price}}</div>
+        </div>
+      {% if PanierProduct != [] %}
+        <div class="summary-checkout ">
+          <a href="{{path('invoice_new')}} " ><button class="btn btn-dark"><h6 > Commander</h6>  </button></a>
+        </div>
+        
+      </div>
+      {% endif %}
+    </aside>
+      
+  </main>
+
+  #}
+ <main>
+    <div class="basket">
+      <div class="basket-module">
+        <label for="promo-code">Enter code promo</label>
+        <input id="promo-code" type="text" name="promo-code" maxlength="5" class="promo-code-field">
+        <button class="promo-code-cta">Appliquer</button>
+      </div>
+     
+     {% for annonce in PanierProduct %}
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="{{asset('uploads/images/' ~ annonce.product.images)}} " class="product-frame">
+          </div>
+          <div class="product-details">
+            <h4>{{annonce.product.title}}</h4>
+            <h6>{{annonce.product.content}}</h6>
+          </div>
+        </div>
+        
+        <div class="quantity">
+         <a href="{{path("panier_less", {'product': annonce.product.id}) }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-dark" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
+</svg></a>
+      {{annonce.qty}}
+       <a href="{{path("panier_add", {'product': annonce.product.id}) }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-dark" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+</svg></a> 
+        </div>
+        <div class="subtotal">{{annonce.product.price|price}}</div>
+        <div class="remove">
+         <a href="{{path('panier_supprimer', {'product': annonce.product.id}) }}"><button>Retirer l'article</button></a>
+        </div>
+      </div>
+     {% endfor %}
+
+    </div>
+    <aside>
+    
+      <div class="summary">
+        <div class="summary-total-items"><span class="total-items"></span> Prix total des articles</div>
+        <div class="summary-subtotal">
+          <div class="subtotal-title">Sous-total</div>
+          <div class="subtotal-value final-value" id="basket-subtotal">{{total|price}}</div>
+          <div class="summary-promo hide">
+            <div class="promo-title">Promotion</div>
+            <div class="promo-value final-value" id="basket-promo"></div>
+          </div>
+        </div>
+       
+        <div class="summary-total">
+        {% if PanierProduct != [] %}
+          <div class="total-title">Total</div>
+          <div class="total-value final-value" id="basket-total">{{total|price}}</div>
+        </div>
+        <div class="summary-checkout">
+          
+           <a href="{{path('invoice_new')}} " ><button class="checkout-cta btn btn-dark"><h6 > Commander</h6>  </button></a>
+      
+        </div>
+      </div>
+    </aside>
+       {% endif %}
+  </main>
 
 {% endblock %}

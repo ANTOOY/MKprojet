@@ -25,7 +25,7 @@ class AnnoncesController extends AbstractController
     #[Route('/', name: 'home')]
     public function index(AnnoncesRepository $annonRepo): Response
     {
-        return $this->render('admin/annonces/index.html.twig', [
+        return $this->render('admin/index.html.twig', [
             'annonces' => $annonRepo->findAll(),
         ]);
     }

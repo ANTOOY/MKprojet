@@ -17,38 +17,40 @@
 
 
 {% block body %}
- <h1 class="text-center ">livraison</h1>
- <br>
- <h2 class="text-center">Résumer de votre panier</h2>
-
-<table class="table table-striped panier">
+ <h3 class="text-center ">livraison</h3>
+ 
+ <h5 class="text-center">Résumer de votre panier</h5>
+<br>
+<table class="table table-striped panier container">
   <thead>
+  
     <tr>
       
-      <th scope="col">Nom</th>
+      <th scope="col"><h6>Nom</h6></th>
       
       
-      <th scope="col">Quantité</th>
-      <th scope="col">Prix</th>
+      <th scope="col"><h6> Quantité</h6> </th>
+      <th scope="col"><h6> Prix</h6> </th>
 
     </tr>
+    
   </thead>
   <tbody>
-  {# {% for annonce in PanierProduct %} #}
+  {% for annonce in PanierProduct %}
    
-    {# <tr>
-      <td>{{annonce.product.title}}   </td>
+    <tr>
+      <td><h6>{{annonce.product.title}} </h6>  </td>
   
  
-      <td> {{annonce.qty}}</td>
-      <td>{{annonce.product.price|price}}</td>
+      <td> <h6>{{annonce.qty}}</h6></td>
+      <td><h6>{{annonce.product.price|price}}</h6></td>
     </tr>
     
   {% endfor %}
   <tr>
-   <td colspan="2">Total: </td>
-   <td> {{total|price}}</td>
-    </tr> #}
+   <td colspan="2"><h6>Total:</h6> </td>
+   <td> <h6>{{total|price}}</h6></td>
+    </tr>
    </tbody>
 </table>
 
@@ -58,7 +60,7 @@
 
 
 
-    {# <div class="p-3 mb-2 bg-secondary text-dark panier ">
+    <div class="p-3 mb-2  text-dark panier container">
     {{ form_start(form) }}
     <div class="column">
     <div class="col">
@@ -81,8 +83,10 @@
     <div class="col">
     {{form_row(form.country)}}
     </div>  
-
+<br>
+<br>
     <div class="col">
+    
     {{form_row(form.valider) }}
     </div>  
      
@@ -91,7 +95,9 @@
     </div>   
        
           
-    {{ form_end(form) }} #}
+    {{ form_end(form) }}
       
      
     {% endblock %}
+
+    
