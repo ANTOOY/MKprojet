@@ -9,22 +9,32 @@
 
 <main>
 {% for annonce in annonces %}
-<div class="publication-container ">
+<div class="publication-container row-cols-md-1 g-4">
 <div class="publication row-cols-md-1 g-4 ">
-
-<img class="img" src="{{asset('uploads/images/' ~ annonce.images)}}" alt="image" ><br>
+<div class="responsive">
+<img class="img-fluid" src="{{asset('uploads/images/' ~ annonce.images)}}" alt="image" ><br>
+</div>
 <br>
-<h5>{{annonce.title}}</h5>
+<div class="art-title">
+<div class=" text-dark"><h5>{{annonce.title}}</h5></div>
+</div>
 <br>
- <a class="button-achat "  href="{{path('panier_add', {'product': annonce.id}) }}">Ajouter au Panier</a> 
+ <h6><a class="button-achat "  href="{{path('panier_add', {'product': annonce.id}) }}">Ajouter au Panier </a></h6> 
         <br>
-        <br>
+        
+<div class="art-title"> 
+<div class=" text-dark"><h5>Catégorie : {{annonce.categories}}</h5></div>
+</div>
+<div class="art-article">
+<div class="fw-bolder text-white "><h5>{{annonce.content|raw}} </h5></div>
 
-<h5>Catégorie : {{annonce.categories}}</h5>
-<h6>{{annonce.content|raw}} </h6>
-<h6>Prix:{{annonce.price|price}}</h6>
+<br>
+<div class="art-article">
+<div class=" text-white"><h5>Prix:{{annonce.price|price}}</h5></div>
+</div>
 </div>
 
+</div>
 
 
 
@@ -32,10 +42,10 @@
  {% endfor %}
 </main>
 
-  {# <section class="container">
-   {% for annonce in annonces %}
-  <div class="cardArt ">
+  {# <section class="container ">
+  <div class="cardArt row-cols-md-1 g-4">
  
+   {% for annonce in annonces %}
   <div class="card-img ">
   <img class="imgA" src="{{asset('uploads/images/' ~ annonce.images)}}" alt="image" width="100%" height="100%" >
   </div>

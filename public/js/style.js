@@ -23,7 +23,7 @@ $('.promo-code-cta').click(function() {
   if (promoCode == 'mk45' || promoCode == 'MK45') {
     //If promoPrice has no value, set it as 10 for the 10OFF promocode
     if (!promoPrice) {
-      promoPrice = 15;
+      promoPrice = 10;
     } else if (promoCode) {
       promoPrice = promoPrice * 1;
     }

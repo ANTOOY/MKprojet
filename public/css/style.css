@@ -15,8 +15,20 @@
     /* margin: 10px; */
     text-align: center;
     justify-content: space-around;
+} 
     
-    
+.responsive{
+  width: 100%;
+  height: auto;
+    }
+
+p{
+  color: #111;
+}
+
+.btn{
+  
+  background-color: black;
 }
 
 .main-nav{
@@ -70,13 +82,20 @@ li{
   margin: 40px;
 }
 
+.body-container{
+  background: url(/image/casquette-header.jpeg)  center/cover;
+  height: 500px;
+}
+
 .publication{
     
     margin: 5px;
     padding: 5px;
     border: 2px solid black;
+    border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     width: 500px;
+    
 }
 
 .publication-container{
@@ -95,10 +114,10 @@ li{
 }
 
 .button-achat{
-    background: brown;
+    background: black;
     padding: 10px;
-    border: 5px solid rgba(42, 42, 96, 0.355);
-    border-radius: 3%;
+    border: 2px solid rgba(42, 42, 96, 0.355);
+    border-radius: 5%;
     cursor: pointer;
     color: white;
     margin: 2px;
@@ -106,6 +125,24 @@ li{
     
 }
 
+.art-article{
+  border: 2px solid black;
+  border-radius: 1%;
+  background: black;
+  color: white;
+  padding: 5px;
+}
+
+.text-home{
+background: #e6dee9;
+text-align: center;
+}
+
+/* .d-block{
+  height: 600px;
+} */
+
+/* /////////////////////////FOOTER/////////////////////////////////////////////////// */
 .footer-container  {
     background: black;
 }
@@ -135,74 +172,19 @@ li{
     color: yellow;
 }
 
+/* ////////////////////////ADMIN/////////////////////////////////////////// */
+
+.title-ann, .price-ann{
+  border:1px solid black;
+}
+
 /* ////////////////////////////home//////////////////////////////////////////////////// */
 
-
-.card {
-    width: 12rem;
-    cursor: pointer;
-   
-    
-  }
-  
-  .contentt {
-    text-align: center;
-    position: relative;
-    transition: all 2.25s;
-    background: url(/image/logo-MK.png) center/cover;
-    padding: 5em;
-    transform-style: preserve-3d;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    height: 60vh;
-    width: 500px;
-    margin: 10px;
-    text-align: center;
-  }
-  
-  .card:hover .contentt {
-    transform: rotateY(0.5turn);
-  }
-  
-  .front,
-  .back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    padding: 2em;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-    
-  }
-  
-  .title {
-    transform: translateZ(5rem);
-    font-size: 2rem;
-  }
-  
-  .subtitle {
-    transform: translateZ(2rem);
-  }
-  
-  .back {
-    transform: rotateY(0.5turn);
-    background: url(/image/casquette-header.jpeg) center/cover;
-  }
-  
-  .description {
-    transform: translateZ(3rem);
-  }
-  
 
   /* ///////////////////////////ARTICLE/////////////////////////////////////////////// */
 
   
-/*   
+ /*   
 .cardArt {
   width: 350px;
   height: 450px;
@@ -283,7 +265,7 @@ border: 2px solid red;
   border: 1px solid #ffcaa6;
   background-color: #ffcaa6;
  } */
-  
+   
 
  /* ////////////////////////////PANIER////////////////////////////////////////////////////////////////// */
 
@@ -696,3 +678,4 @@ aside {
     padding: 0 1rem;
   }
 }
+

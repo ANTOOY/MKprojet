@@ -11,20 +11,21 @@
   
 <br>
 
-    <h1 class="text-center ">Ajouter un article</h1>
-    <div >
+    <div class="row container bg-dark text-white" >
+    <h4 class="text-center ">Ajouter un article</h4>
+    <br>
     {{ form_start(form) }}
     <div class="row">
-    <div class="col">
-      {{ form_row(form.title) }}
+    <div class="title-ann col">
+     <h6> {{ form_row(form.title) }}</h6>
     </div>
     <br>
     <div class="col">
-    {{ form_row(form.categories) }}
+    <h6>{{ form_row(form.categories) }}</h6>
     </div>
     </div>
     <br>
-    {{ form_row(form.content) }}
+    <h6>{{ form_row(form.content) }}</h6>
 
      {% if form.vars.value.images != "" %}
       
@@ -32,7 +33,15 @@
      {% endif %}
     {{ form_row(form.images) }}
     <br>
-    {{ form_row(form.price)}}
-     {{ form_end(form) }}
+    <br>
+   
+     <div class="price-ann col"><h6>{{ form_row(form.price)}}</h6>  </div>
+  
+    <div class="col">
+    <h6> {{ form_end(form) }}</h6>
+     </div>
       </div>
+      <br>
+      <br>
+      <br>
      {% endblock %}

@@ -20,7 +20,7 @@ class StripeController extends AbstractController
     #[Route('/{invoice}/stripe', name: 'stripe_checkout')]
     public function checkout(Invoice $invoice, PurchaseRepository $purchaseRepo, Request $request, EntityManagerInterface $em): Response
     {
-        $privateKey = "sk_test_51KktrEBHQwcb3TQzg1UAaVjLCOJt1yUdocsRI5344lVyQxEfgc6RvCgHIORymg99xtoJU85p9hGQILWYoWyfcDFN00qFklx93I";
+        $privateKey = "sk_test_51LrRVOEOFSMGLfYOqAlHU9Utgys6oLbGedGrNc2yezoekTRXRhNiODVHcoCYG0GlYwCpdZhiK0aKmoErDNZmFop500HsjUafhY";
         Stripe::setApiKey($privateKey);
         $purchaseCriteria = [
             "invoice" => $invoice,
@@ -38,6 +38,9 @@ class StripeController extends AbstractController
                 ],
                 "quantity" => $purchase->getQuantity(),
             ];
+
+            
+
             $lineItems[] = $item;
         }
         $successRoute = $this->generateUrl('stripe_valid_payment', [
@@ -91,3 +94,5 @@ class StripeController extends AbstractController
         return $this->redirectToRoute("panier_voir");
     }
 }
+
+
