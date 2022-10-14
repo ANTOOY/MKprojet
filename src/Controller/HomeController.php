@@ -27,7 +27,7 @@ class HomeController extends AbstractController
     {
         if($request->request->all()){
             $email = new Email();
-            $email->to(new Address("welcome.artist07@gmail.com", "Welcome Artist"))
+            $email->to(new Address("studios.mk45@gmail.com", "MK.Studios"))
             ->from($request->request->get("email"))
             ->subject($request->request->get("subject"))
             ->text($request->request->get("message"));

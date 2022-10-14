@@ -8,39 +8,41 @@
 <br>
 
 <main>
+
+<div class=" publication-container row-cols-md-1 g-4">
 {% for annonce in annonces %}
-<div class="publication-container row-cols-md-1 g-4">
 <div class="publication row-cols-md-1 g-4 ">
 <div class="responsive">
-<img class="img-fluid" src="{{asset('uploads/images/' ~ annonce.images)}}" alt="image" ><br>
+<img class=" img-fluid border border-2" src="{{asset('uploads/images/' ~ annonce.images)}}" alt="image" ><br>
 </div>
 <br>
 <div class="art-title">
-<div class=" text-dark"><h5>{{annonce.title}}</h5></div>
+<div class=" text-dark "><h5>{{annonce.title}}</h5></div>
 </div>
 <br>
  <h6><a class="button-achat "  href="{{path('panier_add', {'product': annonce.id}) }}">Ajouter au Panier </a></h6> 
         <br>
         
-<div class="art-title"> 
-<div class=" text-dark"><h5>Catégorie : {{annonce.categories}}</h5></div>
-</div>
-<div class="art-article">
-<div class="fw-bolder text-white "><h5>{{annonce.content|raw}} </h5></div>
+
+<div class=" fw-bolder"><h5>Catégorie : {{annonce.categories}}</h5></div>
+
+
+<div class="fw-bolder "><h5>{{annonce.content|raw}} </h5></div>
 
 <br>
-<div class="art-article">
-<div class=" text-white"><h5>Prix:{{annonce.price|price}}</h5></div>
-</div>
-</div>
 
-</div>
+<div class=" text-dark"><h5>Prix:{{annonce.price|price}}</h5></div>
 
 
 
 </div>
+
+
+
  {% endfor %}
+</div>
 </main>
+<br>
 
   {# <section class="container ">
   <div class="cardArt row-cols-md-1 g-4">
