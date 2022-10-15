@@ -1,0 +1,33 @@
+
+{% block title %}Ajouter une annonce{% endblock %}
+
+
+
+
+    {% block body %}
+  
+  
+
+
+    <h1 class="text-center ">Ajouter une annonce</h1>
+    <div class="p-3 mb-2 bg-secondary text-dark panier ">
+    {{ form_start(form) }}
+    <div class="row">
+    <div class="col">
+      {{ form_row(form.title) }}
+    </div>
+    <div class="col">
+    {{ form_row(form.categories) }}
+    </div>
+    </div>
+    {{ form_row(form.content) }}
+
+     {% if form.vars.value.images != "" %}
+      
+       <img class="img-size-little" src="/uploads/images{{ form.vars.value.images }}" >
+     {% endif %}
+    {{ form_row(form.images) }}
+    {{ form_row(form.price)}}
+     {{ form_end(form) }}
+      </div>
+     {% endblock %}

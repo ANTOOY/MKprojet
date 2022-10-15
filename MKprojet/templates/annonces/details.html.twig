@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{annonce.title}}{% endblock %}
+
+{% block body %}
+
+ <div class="card-body border border-4">
+        <h5 class="card-title"><a class="btn btn-secondary bg-secondary p-2" style="--bs-bg-opacity: .3;" href="{{path('annonces_details', {slug: annonce.slug})}}">{{annonce.title}}</a></h5>
+        <p>Catégorie : {{annonce.categories}}</p>
+         <p class="card-text">Prix : {{annonce.price|price}}</p>
+        <p class="card-text">Description : {{annonce.content|raw}}</p>
+       <a class="btn btn-secondary bg-secondary p-2" style="--bs-bg-opacity: .3;" href="{{path('panier_add', {'product': annonce.id}) }}">Ajouter au Panier</a>  
+
+       
+         
+        
+        </div>
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{asset('uploads/images/' ~ annonce.images)}}" class="card-img-top" alt="{{annonce.title}}" >
+  
+    </div>
+    </div>
+
+
+
+
+
+
+ 
+
+<br>
+  
+
+
+
+
+
+{% endblock %}
