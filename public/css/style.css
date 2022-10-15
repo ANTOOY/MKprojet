@@ -58,12 +58,8 @@ display: flex;
     animation: 5s linear 0s infinite running myRotate;
 }
 
-#img-nav:hover{
 
-}
-#img-nav{
 
-}
 @keyframes mySlide{
     from{margin-right:100%;}
     to{margin-left :50%;}
@@ -87,16 +83,18 @@ header{
   height: 50%;
 }
 
-.video1{
+video{
   padding: 10px;
   display: flex;
   justify-content: center;
   margin-right: 50px;
+  align-items: center;
 }
 
 .card{
   background-color: #111;
  align-items: center;
+ 
 }
 
 
@@ -108,7 +106,7 @@ header{
     border-radius: 5px;
 
     width: 300px;
-     
+    background-color: rgb(243, 243, 243);  
     
 }
 
@@ -153,6 +151,10 @@ text-align: center;
   border: 1px solid #ffcaa6;
   background-color: #ffcaa6;
  } 
+
+
+
+
 
 /* /////////////////////////FOOTER/////////////////////////////////////////////////// */
 .footer-container  {
