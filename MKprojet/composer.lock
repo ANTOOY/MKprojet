@@ -3969,16 +3969,16 @@
         },
         {
             "name": "symfony/framework-bundle",
-            "version": "v6.0.14",
+            "version": "v6.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/framework-bundle.git",
-                "reference": "7a58db76b1e3b5f1a1ff01742c0bc69b156a4ce4"
+                "reference": "763f099f866a5242507317614cc19bc1ddb2536a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/framework-bundle/zipball/7a58db76b1e3b5f1a1ff01742c0bc69b156a4ce4",
-                "reference": "7a58db76b1e3b5f1a1ff01742c0bc69b156a4ce4",
+                "url": "https://api.github.com/repos/symfony/framework-bundle/zipball/763f099f866a5242507317614cc19bc1ddb2536a",
+                "reference": "763f099f866a5242507317614cc19bc1ddb2536a",
                 "shasum": ""
             },
             "require": {
@@ -4097,7 +4097,7 @@
             "description": "Provides a tight integration between Symfony components and the Symfony full-stack framework",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/framework-bundle/tree/v6.0.14"
+                "source": "https://github.com/symfony/framework-bundle/tree/v6.0.13"
             },
             "funding": [
                 {
@@ -4113,7 +4113,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-10-07T08:02:12+00:00"
+            "time": "2022-09-29T11:04:19+00:00"
         },
         {
             "name": "symfony/http-client",
